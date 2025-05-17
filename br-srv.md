@@ -25,8 +25,11 @@ sed -i "s/enforcing/disabled/g" /etc/selinux/config && setenforce 0 && echo "net
 >После использовать команду `setenforse 0`
 ## Создание пользователя
 ```
-useradd sshuser
+useradd sshuser -u 1010
 passwd sshuser
+```
+```
+echo "sshuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 ```
 Пароль: P@ssw0rd
 
