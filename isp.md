@@ -9,19 +9,16 @@
 ~~~
 172.16.4.1/28 1-hq-srv
 172.16.5.1/28 2-br-srv
-isp.au-team.irpo
+hostnamectl set-hostname isp.au-team.irpo && bash
 ~~~
 ## Настройка linux на разрешение трафику идти мимо вашей ВМ
 ~~~
-vim или vi  /etc/sysctl.conf`
-net.ipv4.ip_forward=1 
-sysctl -p
+echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf && sysctl -p
 ~~~
 ##  Выключаем selinux
 #### 1 Способ
 ```
-sed -i "s/enforcing/disabled/g" /etc/selinux/config
-setenforse 0
+sed -i "s/enforcing/disabled/g" /etc/selinux/config && setenforce 0
 ```
 #### 2 Способ 
 >Зайти файл `vim или vi /etc/selinux/config`
