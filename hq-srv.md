@@ -17,14 +17,18 @@ hq-srv.au-team.irpo
 sed -i "s/enforcing/disabled/g" /etc/selinux/config
 setenforse 0
 ```
+```
+sed -i "s/enforcing/disabled/g" /etc/selinux/config && setenforce 0 && echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf && sysctl -p
+```
 #### 2 Способ 
 >Зайти файл `vim или vi /etc/selinux/config`
 >Изменить `enforcing` на `disabled`
 >После использовать команду `setenforse 0`
 ## Создание пользователя
 ```
-useradd sshuser
+useradd sshuser -u 1010
 passwd sshuser
+echo "sshuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 ```
 Пароль: P@ssw0rd
 
