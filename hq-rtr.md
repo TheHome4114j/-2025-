@@ -153,11 +153,17 @@ vim или vi  /etc/sysctl.conf`
 net.ipv4.ip_forward=1 
 sysctl -p
 ~~~
+```
+echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf && sysctl -p
+```
 ##  Выключаем selinux
 #### 1 Способ
 ```
 sed -i "s/enforcing/disabled/g" /etc/selinux/config
 setenforse 0
+```
+```
+sed -i "s/enforcing/disabled/g" /etc/selinux/config && setenforce 0
 ```
 #### 2 Способ 
 >Зайти файл `vim или vi /etc/selinux/config`
@@ -186,6 +192,7 @@ systemctl enable nftables
 ```
 useradd net_admin
 passwd net_admin
+echo "net_admin ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 ```
 Пароль: P@$$word
 
