@@ -79,7 +79,7 @@ TTL=30
 MTU=1400
 ```
 ```
-echo "NAME=tun1" >> /etc/sysconfig/ifcfg-tun1" && echo DEVICE=tun1" >> /etc/sysconfig/ifcfg-tun1" && echo "ONBOOT=yes" >> /etc/sysconfig/ifcfg-tun1" && echo "STARTMODE=onboot" >> /etc/sysconfig/ifcfg-tun1" && echo "BOOTPROTO=none" >> /etc/sysconfig/ifcfg-tun1" && echo "TYPE=GRE" >> /etc/sysconfig/ifcfg-tun1" && echo "MY_INNER_IPADDR=192.168.10.2/30" >> /etc/sysconfig/ifcfg-tun1" && echo "MY_OUTER_IPADDR=172.16.5.2" >> /etc/sysconfig/ifcfg-tun1" && echo "PEER_OUTER_IPADDR=172.16.4.2" >> /etc/sysconfig/ifcfg-tun1" && echo "ZONE=trusted" >> /etc/sysconfig/ifcfg-tun1" && echo "TTL=30"" >> /etc/sysconfig/ifcfg-tun1" && echo "MTU=1400" >> /etc/sysconfig/ifcfg-tun1" 
+echo "NAME=tun1" >> /etc/sysconfig/ifcfg-tun1" && echo "DEVICE=tun1" >> /etc/sysconfig/ifcfg-tun1" && echo "ONBOOT=yes" >> /etc/sysconfig/ifcfg-tun1" && echo "STARTMODE=onboot" >> /etc/sysconfig/ifcfg-tun1" && echo "BOOTPROTO=none" >> /etc/sysconfig/ifcfg-tun1" && echo "TYPE=GRE" >> /etc/sysconfig/ifcfg-tun1" && echo "MY_INNER_IPADDR=192.168.10.2/30" >> /etc/sysconfig/ifcfg-tun1" && echo "MY_OUTER_IPADDR=172.16.5.2" >> /etc/sysconfig/ifcfg-tun1" && echo "PEER_OUTER_IPADDR=172.16.4.2" >> /etc/sysconfig/ifcfg-tun1" && echo "ZONE=trusted" >> /etc/sysconfig/ifcfg-tun1" && echo "TTL=30"" >> /etc/sysconfig/ifcfg-tun1" && echo "MTU=1400" >> /etc/sysconfig/ifcfg-tun1" 
 ```
 
 После чего надо будет перезагрузить и добавить в автозагрузку 
