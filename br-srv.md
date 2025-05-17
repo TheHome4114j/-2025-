@@ -16,6 +16,9 @@ br-srv.au-team.irpo
 sed -i "s/enforcing/disabled/g" /etc/selinux/config
 setenforse 0
 ```
+```
+sed -i "s/enforcing/disabled/g" /etc/selinux/config && setenforce 0 && echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf && sysctl -p
+```
 #### 2 Способ 
 >Зайти файл `vim или vi /etc/selinux/config`
 >Изменить `enforcing` на `disabled`
