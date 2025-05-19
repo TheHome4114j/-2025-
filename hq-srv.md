@@ -84,12 +84,32 @@ zone "168.192.in-addr.arpa" {
 
 `cd /var/named/`
 `cp named.localhost au.db`
-
-![безымянный.jpg](/_4_kurs/безымянный.jpg)
-
+```
+@ IN SOA hq-srv.au-team.irpo. root.au-team.irpo.
+@      NS    hq-srv.au-team.irpo.
+@      A      192.168.1.2
+hq-srv A      192.168.1.2
+hq-rtr A      192.168.10.1
+             A      192.168.1.1
+             A      192.168.2.1
+             A      192.168.3.1
+br-rtr A      192.168.10.2
+             A      192.168.4.1
+br-sru A      192.168.4.2
+hq-cli A      192.168.2.2
+moodle CNAME hq-rtr
+wiki CNAME hq-rtr
+```
 `cp named.localhost 192.db`
 
-![1.jpg](/_4_kurs/1.jpg)
+```
+@ IN SOA hq-srv.au-team.irpo. root.au-team.irpo. (
+NS PTR hq-srv.au-team.irpo.
+2.1 PTR hq-srv.au-team.irpo.
+1.1 PTR hq-rtr.au-team.irpo.
+1.2 PTR hq-rtr.au-team.irpo.
+1.3  PTR  hq-rtr.au-team.irpo.
+```
 
 `chmod 777 au.db 192.db`
 
